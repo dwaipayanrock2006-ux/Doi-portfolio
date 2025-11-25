@@ -15,7 +15,7 @@ const About: React.FC = () => {
     // the broken image and confirm the code is trying to use your link.
     
     // Uncomment the line below to restore the professional placeholder fallback:
-    // setImgSrc("https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop");
+    // setImgSrc("https://github.com/dwaipayanrock2006-ux/Doi-portfolio/blob/e1b4fcfb92708317693fc9a2bccbababd77b2b09/Dwaipayan.jpeg");
     console.warn("Image failed to load. Please check the URL in constants.tsx");
   };
 

@@ -16,10 +16,8 @@ export const PERSONAL_INFO = {
   shortBio: "18-year-old BBA Business Analytics student and Growth Head Intern. Building a Harvey Specter mindset: confidence, strategic thinking, emotional control, execution, and leadership.",
   email: "contact@dwaipayan.com", // Placeholder
   resumeLink: "#",
-  // NOTE: This is a repository link. For the image to show, this should be a direct link to an image file 
-  // (e.g., ending in .jpg or .png). 
-  // Example raw link: https://raw.githubusercontent.com/dwaipayanrock2006-ux/Image-of-doi/main/your-photo.jpg
-  profileImage: "https://github.com/dwaipayanrock2006-ux/Image-of-doi.git" 
+  // Updated to the RAW url so the image actually loads in the browser
+  profileImage: "https://raw.githubusercontent.com/dwaipayanrock2006-ux/Doi-portfolio/64f5a71d2465a8aa9f48e9602c92c1c802ae9157/Dwaipayan.jpg" 
 };
 
 export const NAV_ITEMS: NavItem[] = [
