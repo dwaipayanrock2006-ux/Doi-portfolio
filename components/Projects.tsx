@@ -27,7 +27,7 @@ const Projects: React.FC = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-500 ease-premium ${
                 activeCategory === cat 
                   ? 'bg-brand-black text-white shadow-lg scale-105' 
                   : 'bg-white text-slate-600 border border-slate-200 hover:border-brand-300 hover:text-brand-600 hover:-translate-y-0.5'
@@ -44,12 +44,12 @@ const Projects: React.FC = () => {
               <div className={`flex flex-col ${index % 2 === 1 ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-20 items-center group`}>
                 <div className="w-full lg:w-1/2">
                   <TiltCard className="rounded-3xl" spotlight={false}>
-                    <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 aspect-[4/3] group-hover:shadow-brand-900/10 transition-shadow duration-500">
-                      <div className="absolute inset-0 bg-brand-900/0 group-hover:bg-brand-900/10 transition-colors duration-500 z-10" />
+                    <div className="relative rounded-3xl overflow-hidden shadow-2xl shadow-slate-200 aspect-[4/3] group-hover:shadow-brand-900/10 transition-shadow duration-700 ease-premium">
+                      <div className="absolute inset-0 bg-brand-900/0 group-hover:bg-brand-900/10 transition-colors duration-700 ease-premium z-10" />
                       <img 
                         src={project.imagePlaceholder} 
                         alt={project.title} 
-                        className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700 ease-out"
+                        className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-[1000ms] ease-premium"
                       />
                     </div>
                   </TiltCard>
@@ -60,7 +60,7 @@ const Projects: React.FC = () => {
                     <Layers size={14} />
                     {project.role}
                   </div>
-                  <h3 className="text-4xl font-bold text-brand-black group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-800 group-hover:to-brand-500 transition-all duration-300">
+                  <h3 className="text-4xl font-bold text-brand-black group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-brand-800 group-hover:to-brand-500 transition-all duration-500 ease-premium">
                     {project.title}
                   </h3>
                   <p className="text-lg text-slate-600 leading-relaxed">
@@ -69,15 +69,15 @@ const Projects: React.FC = () => {
                   
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, tIndex) => (
-                      <span key={tIndex} className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-sm text-slate-600 font-medium hover:border-brand-300 transition-colors">
+                      <span key={tIndex} className="px-3 py-1 bg-white border border-slate-200 rounded-lg text-sm text-slate-600 font-medium hover:border-brand-300 transition-colors duration-300 ease-premium">
                         {tag}
                       </span>
                     ))}
                   </div>
 
                   <div className="pt-6">
-                    <button className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-full text-brand-black font-semibold hover:bg-brand-black hover:text-white transition-all shadow-sm hover:shadow-lg group/btn hover:scale-105 active:scale-95">
-                      View Project <ArrowUpRight size={18} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    <button className="flex items-center gap-2 px-6 py-3 bg-white border border-slate-200 rounded-full text-brand-black font-semibold hover:bg-brand-black hover:text-white transition-all duration-300 ease-premium shadow-sm hover:shadow-lg group/btn hover:scale-105 active:scale-95">
+                      View Project <ArrowUpRight size={18} className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform duration-300 ease-premium" />
                     </button>
                   </div>
                 </div>

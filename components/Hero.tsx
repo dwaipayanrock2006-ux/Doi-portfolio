@@ -43,22 +43,22 @@ const Hero: React.FC = () => {
     <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-brand-50/30">
       {/* Animated Background Blobs with Parallax */}
       <div 
-        className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob transition-transform duration-75 ease-out"
-        style={{ transform: calculateTransform(30) }} 
+        className="absolute top-0 right-0 -mr-20 -mt-20 w-96 h-96 bg-brand-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob transition-transform duration-1000 ease-out"
+        style={{ transform: calculateTransform(40) }} 
       />
       <div 
-        className="absolute top-0 right-40 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 transition-transform duration-100 ease-out"
-        style={{ transform: calculateTransform(-30) }} 
+        className="absolute top-0 right-40 w-96 h-96 bg-purple-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000 transition-transform duration-1000 ease-out"
+        style={{ transform: calculateTransform(-40) }} 
       />
       <div 
-        className="absolute -bottom-32 left-20 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000 transition-transform duration-150 ease-out"
-        style={{ transform: calculateTransform(50) }} 
+        className="absolute -bottom-32 left-20 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000 transition-transform duration-1000 ease-out"
+        style={{ transform: calculateTransform(60) }} 
       />
 
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <div className="max-w-5xl">
           <div className="animate-fade-in">
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-8 shadow-sm hover:shadow-md transition-all cursor-default hover:scale-105">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-sm border border-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-8 shadow-sm hover:shadow-md transition-all duration-500 ease-premium cursor-default hover:scale-105">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
@@ -67,7 +67,7 @@ const Hero: React.FC = () => {
             </div>
           </div>
           
-          <div className="animate-[fadeIn_0.8s_ease-out_0.2s_forwards] opacity-0">
+          <div className="animate-[fadeIn_1s_cubic-bezier(0.4,0,0.2,1)_0.2s_forwards] opacity-0">
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-brand-black mb-8 leading-[1.05]">
               Growth, Strategy <br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 to-brand-400">
@@ -91,20 +91,20 @@ const Hero: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-4">
               <a 
                 href="#projects" 
-                className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-brand-black rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl shadow-brand-900/10"
+                className="group relative inline-flex items-center justify-center px-8 py-4 text-base font-bold text-white bg-brand-black rounded-full overflow-hidden transition-all duration-500 ease-premium hover:scale-105 active:scale-95 shadow-xl shadow-brand-900/10"
               >
-                <div className="absolute inset-0 w-full h-full bg-slate-800 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
+                <div className="absolute inset-0 w-full h-full bg-slate-800 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-premium" />
                 <span className="relative flex items-center">
                   View Work
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
                 </span>
               </a>
               <a 
                 href={PERSONAL_INFO.resumeLink}
-                className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-brand-black bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-all hover:border-brand-300 hover:shadow-lg active:scale-95"
+                className="group inline-flex items-center justify-center px-8 py-4 text-base font-bold text-brand-black bg-white border border-slate-200 rounded-full hover:bg-slate-50 transition-all duration-500 ease-premium hover:border-brand-300 hover:shadow-lg active:scale-95"
               >
                 Download Resume
-                <Download className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform" />
+                <Download className="ml-2 w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
               </a>
             </div>
           </Reveal>

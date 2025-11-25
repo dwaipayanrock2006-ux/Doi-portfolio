@@ -8,13 +8,13 @@ interface RevealProps {
   className?: string;
 }
 
-export const Reveal = ({ 
+export const Reveal: React.FC<RevealProps> = ({ 
   children, 
   width = 'fit-content', 
   delay = 0, 
   direction = 'up',
   className = ''
-}: RevealProps) => {
+}) => {
   const ref = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
 
@@ -33,11 +33,11 @@ export const Reveal = ({
   const getTransform = () => {
     if (!isVisible) {
       switch (direction) {
-        case 'up': return 'translateY(30px)';
-        case 'down': return 'translateY(-30px)';
-        case 'left': return 'translateX(30px)';
-        case 'right': return 'translateX(-30px)';
-        default: return 'translateY(30px)';
+        case 'up': return 'translateY(40px)';
+        case 'down': return 'translateY(-40px)';
+        case 'left': return 'translateX(40px)';
+        case 'right': return 'translateX(-40px)';
+        default: return 'translateY(40px)';
       }
     }
     return 'translate(0, 0)';
@@ -53,7 +53,7 @@ export const Reveal = ({
         style={{ 
           transform: getTransform(),
           opacity: isVisible ? 1 : 0,
-          transition: `all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) ${delay}ms`
+          transition: `all 1000ms cubic-bezier(0.4, 0, 0.2, 1) ${delay}ms`
         }}
       >
         {children}
