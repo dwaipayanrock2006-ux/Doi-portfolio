@@ -1,3 +1,4 @@
+
 import React, { useRef, useState } from 'react';
 
 interface TiltCardProps {
@@ -21,8 +22,9 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, className = '', spotlight
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
-    const rotateX = ((y - centerY) / centerY) * -6; // Reduced max rotation for subtler feel
-    const rotateY = ((x - centerX) / centerX) * 6;
+    // Smoother, subtler rotation
+    const rotateX = ((y - centerY) / centerY) * -5;
+    const rotateY = ((x - centerX) / centerX) * 5;
 
     setRotation({ x: rotateX, y: rotateY });
     setPosition({ x, y });
@@ -41,16 +43,16 @@ const TiltCard: React.FC<TiltCardProps> = ({ children, className = '', spotlight
       onMouseMove={handleMouseMove}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`relative transition-transform duration-500 ease-premium will-change-transform ${className}`}
+      className={`relative transition-all duration-700 cubic-bezier(0.23, 1, 0.32, 1) will-change-transform ${className}`}
       style={{
-        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(${isHovered ? 1.02 : 1})`,
+        transform: `perspective(1000px) rotateX(${rotation.x}deg) rotateY(${rotation.y}deg) scale(${isHovered ? 1.015 : 1})`,
       }}
     >
       {spotlight && (
         <div
-          className="pointer-events-none absolute -inset-px opacity-0 transition duration-500 ease-premium group-hover:opacity-100 z-10 rounded-[inherit]"
+          className="pointer-events-none absolute -inset-px opacity-0 transition-opacity duration-700 ease-premium group-hover:opacity-100 z-10 rounded-[inherit]"
           style={{
-            background: `radial-gradient(800px circle at ${position.x}px ${position.y}px, rgba(14, 165, 233, 0.08), transparent 40%)`,
+            background: `radial-gradient(600px circle at ${position.x}px ${position.y}px, rgba(14, 165, 233, 0.1), transparent 45%)`,
             opacity: isHovered ? 1 : 0,
           }}
         />

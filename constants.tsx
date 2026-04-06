@@ -1,3 +1,4 @@
+
 import { 
   TrendingUp, 
   Brain, 
@@ -14,7 +15,7 @@ export const PERSONAL_INFO = {
   name: "Dwaipayan Pal",
   tagline: "Growth, Strategy & AI — Building the Next Wave of Digital Products.",
   shortBio: "18-year-old BBA Business Analytics student and Growth Head Intern. Building a Harvey Specter mindset: confidence, strategic thinking, emotional control, execution, and leadership.",
-  email: "contact@dwaipayan.com", // Placeholder
+  email: "dwaipayanrock2006@gmail.com",
   resumeLink: "#",
   // Updated to the RAW url so the image actually loads in the browser
   profileImage: "https://raw.githubusercontent.com/dwaipayanrock2006-ux/Doi-portfolio/64f5a71d2465a8aa9f48e9602c92c1c802ae9157/Dwaipayan.jpg" 

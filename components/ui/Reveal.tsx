@@ -1,8 +1,9 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 
 interface RevealProps {
   children: React.ReactNode;
-  width?: 'fit-content' | '100%';
+  width?: string;
   delay?: number;
   direction?: 'up' | 'down' | 'left' | 'right';
   className?: string;
@@ -10,7 +11,7 @@ interface RevealProps {
 
 export const Reveal: React.FC<RevealProps> = ({ 
   children, 
-  width = 'fit-content', 
+  width = '100%', 
   delay = 0, 
   direction = 'up',
   className = ''
@@ -24,7 +25,7 @@ export const Reveal: React.FC<RevealProps> = ({
         setIsVisible(true);
         observer.disconnect();
       }
-    }, { threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
     
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -33,27 +34,27 @@ export const Reveal: React.FC<RevealProps> = ({
   const getTransform = () => {
     if (!isVisible) {
       switch (direction) {
-        case 'up': return 'translateY(40px)';
-        case 'down': return 'translateY(-40px)';
-        case 'left': return 'translateX(40px)';
-        case 'right': return 'translateX(-40px)';
-        default: return 'translateY(40px)';
+        case 'up': return 'translate3d(0, 30px, 0) scale(0.98)';
+        case 'down': return 'translate3d(0, -30px, 0) scale(0.98)';
+        case 'left': return 'translate3d(30px, 0, 0) scale(0.98)';
+        case 'right': return 'translate3d(-30px, 0, 0) scale(0.98)';
+        default: return 'translate3d(0, 30px, 0) scale(0.98)';
       }
     }
-    return 'translate(0, 0)';
+    return 'translate3d(0, 0, 0) scale(1)';
   };
 
   return (
     <div 
       ref={ref} 
       style={{ width }} 
-      className={`${className} relative`}
+      className={`${className} relative will-change-transform`}
     >
       <div 
         style={{ 
           transform: getTransform(),
           opacity: isVisible ? 1 : 0,
-          transition: `all 1000ms cubic-bezier(0.4, 0, 0.2, 1) ${delay}ms`
+          transition: `transform 1000ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms, opacity 800ms cubic-bezier(0.16, 1, 0.3, 1) ${delay}ms`
         }}
       >
         {children}
